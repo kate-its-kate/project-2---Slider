@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+/* images from https://www.imdb.com/ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Aboreto', cursive;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 35%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.text-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.text-slide--first {
+    background-color: #8b6255;
+}
+
+.text-slide--second {
+    background-color: #d25f7c;
+}
+
+.text-slide--third {
+    background-color: #e95d3a;
+}
+
+.text-slide--fourth {
+    background-color: #791d29;
+}
+
+.text-slide__header {
+    margin-top: -30px;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.slide--first {
+    background-image: url('https://m.media-amazon.com/images/M/MV5BNzAxY2VlYTgtYTc3MC00MWUyLTk0YzMtMDFlMjJlNTlmYzc0XkEyXkFqcGdeQXVyNzgxMzc3OTc@._V1_.jpg');
+}
+
+.slide--second {
+    background-image: url('https://m.media-amazon.com/images/M/MV5BMjA2MjU3NjUxNF5BMl5BanBnXkFtZTcwNjg2MzU3NQ@@._V1_.jpg');
+}
+
+.slide--third {
+    background-image: url('https://m.media-amazon.com/images/M/MV5BODE1NzMwNTM4OV5BMl5BanBnXkFtZTgwNjY3NjI3NTM@._V1_.jpg');
+}
+
+.slide--fourth {
+    background-image: url('https://m.media-amazon.com/images/M/MV5BMWQ5ZmI5MTktYjUzZS00NWM2LWJkOWMtMDQ3MmNhM2RkYjc0XkEyXkFqcGdeQXVyNjc5Mjg0NjU@._V1_.jpg');
+}
+
+.btn {
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+    color: #aaa;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #222;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    z-index: 5;
+}
+
+.btn--down {
+    transform: translateX(-100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.btn--up {
+    transform: translateY(-100%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
