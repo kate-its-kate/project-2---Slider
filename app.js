@@ -1,13 +1,11 @@
-const btnUp = document.querySelector('.btn--up');
 const btnDown = document.querySelector('.btn--down');
-const container = document.querySelector('container');
-const slider = document.querySelector('.slider');
+const btnUp = document.querySelector('.btn--up');
 const sidebar = document.querySelector('.sidebar');
+const slider = document.querySelector('.slider');
+const container = document.querySelector('.container');
 const slidesCount = slider.querySelectorAll('.slide').length;
-const containerHeight = container.getClientRects;
+sidebar.style.top = `-${(slidesCount-1) * 100}vh`;
 let activeSlideIndex = 0;
-
-sidebar.style.top = `${(slidesCount - 1) * 100}vh`;
 
 btnUp.addEventListener('click', () => {
     changeSlide('up');
@@ -19,17 +17,18 @@ btnDown.addEventListener('click', () => {
 
 function changeSlide(direction) {
     if (direction === 'up') {
-        activeSlideIndex++;
+        activeSlideIndex++
         if (activeSlideIndex === slidesCount) {
             activeSlideIndex = 0;
         }
     } else if (direction === 'down') {
-        activeSlideIndex--;
+        activeSlideIndex--
         if (activeSlideIndex < 0) {
             activeSlideIndex = slidesCount - 1;
         }
     }
+    const containerHeight = container.clientHeight
 
-    sidebar.style.transform = translateY(-`${activeSlideIndex * containerHeight}px`);
-    slider.style.transform = translateX(`${activeSlideIndex * containerHeight}px`);
+    slider.style.transform = `translateY(-${activeSlideIndex * containerHeight}px)`;
+    sidebar.style.transform = `translateY(${activeSlideIndex * containerHeight}px)`;
 }
